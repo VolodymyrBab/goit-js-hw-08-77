@@ -12,5 +12,8 @@ function currentTimeWatching(evt) {
   localStorage.setItem('videoplayer-current-time', evt.seconds);
 };
 
-
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0);
+if(localStorage.getItem('videoplayer-current-time')){
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+} else {
+  player.setCurrentTime(0)
+}
